@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals Football Academy - Lagos, Nigeria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* --- BRANDING & VARIABLES --- */
+        :root {
+            --color-primary: #008000;
+            /* Rich Green */
+            --color-secondary: #FFD700;
+            /* Bright Gold */
+            --color-dark: #1a1a1a;
+            --color-light: #f4f7f6;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        /* --- GLOBAL RESET & TYPOGRAPHY --- */
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--color-dark);
+            scroll-behavior: smooth;
+            background-color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        h2 span {
+            color: var(--color-primary);
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        #main-header {
+            background-color: var(--color-primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--color-secondary);
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-secondary);
+        }
+
+        .whatsapp-btn {
+            /* Updated WhatsApp link with new number */
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        /* --- HERO SECTION --- */
+        #hero-section {
+            /* Placeholder Background Image - REPLACE WITH YOUR PITCH IMAGE */
+            background: linear-gradient(rgba(0, 128, 0, 0.85), rgba(0, 128, 0, 0.85)), url('HERO-BACKGROUND-IMAGE.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 5rem;
+            color: white;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content h3 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-top: 10px;
+            color: var(--color-secondary);
+        }
+
+        .hero-cta-button {
+            display: inline-block;
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 18px 50px;
+            margin-top: 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .hero-cta-button:hover {
+            background-color: #f7c900;
+            transform: scale(1.05);
+        }
+
+        /* --- MISSION SECTION (About Us) --- */
+        #mission {
+            background-color: white;
+        }
+
+        .mission-content {
+            display: flex;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .mission-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .mission-points {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .point-item {
+            background: var(--color-light);
+            padding: 20px;
+            border-left: 4px solid var(--color-secondary);
+            border-radius: 4px;
+        }
+
+        .point-item h4 {
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            margin-top: 0;
+            font-weight: 700;
+        }
+
+        /* --- KEY FACTS SECTION --- */
+        #key-facts {
+            background-color: var(--color-light);
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .fact-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid var(--color-primary);
+        }
+
+        .fact-box i {
+            font-size: 2.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 10px;
+        }
+
+        .fact-box h4 {
+            font-size: 1.4rem;
+            color: var(--color-dark);
+            margin: 10px 0;
+            font-weight: 700;
+        }
+
+        .fact-box p {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        /* --- COACHES SECTION (Staff) --- */
+        #staff {
+            background-color: white;
+        }
+
+        .staff-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .staff-member {
+            width: 280px;
+            text-align: center;
+            background: var(--color-light);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .staff-member .role {
+            color: var(--color-secondary);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .staff-member .name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+
+        .staff-member .staff-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--color-secondary);
+        }
+
+        /* --- CONTACT & CTA --- */
+        #contact {
+            text-align: center;
+            background-color: var(--color-primary);
+            color: white;
+            padding: 80px 0;
+        }
+
+        #contact h2 {
+            color: var(--color-secondary);
+        }
+
+        /* --- FOOTER --- */
+        #main-footer {
+            background-color: var(--color-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        /* --- MODAL (Registration Pop-up) --- */
+        #registration-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 35px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 480px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 35px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--color-primary);
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 15px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #004d00;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 900px) {
+            .mission-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .fact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-btn {
+                margin-top: 10px;
+            }
+
+            #contact .hero-cta-button {
+                display: block;
+                width: 80%;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="main-header">
+        <div class="container nav-content">
+            <span class="logo-text">GOALS FOOTBALL ACADEMY</span>
+            <nav>
+                <ul>
+                    <li><a href="#hero-section">Home</a></li>
+                    <li><a href="#mission">About Us</a></li>
+                    <li><a href="#key-facts">Key Facts</a></li>
+                    <li><a href="#staff">Coaches</a></li>
+                    <li><a href="#contact">Enroll</a></li>
+                    <li><a href="https://wa.me/2348086143436" target="_blank" class="whatsapp-btn"><i
+                                class="fab fa-whatsapp"></i> Chat Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero-section">
+        <div class="hero-content">
+            <h1>UNLEASH YOUR POTENTIAL TO THE NEXT LEVEL</h1>
+            <h3>GOALS FOOTBALL ACADEMY.</h3>
+
+            <button class="hero-cta-button" onclick="openRegistrationModal()">
+                Register for a Tryout <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <section id="mission">
+        <div class="container">
+            <h2>About <span>Goals</span> Academy</h2>
+            <div class="mission-content">
+                <div class="mission-text">
+                    <p>Goals Football Academy is built on the philosophy that true talent requires discipline,
+                        structure, and elite coaching. We provide a friendly yet challenging environment for young
+                        Nigerian footballers to develop the skills needed for the international stage.</p>
+                    <p>Our program is not just about playing football; it's about developing character, sportsmanship,
+                        and a professional mindset that lasts a lifetime.</p>
+                    <p style="font-weight: 600; color: var(--color-primary);">Join us in Mushin, Lagos, and start your
+                        journey today!</p>
+                </div>
+
+                <div class="mission-points">
+                    <div class="point-item">
+                        <h4><i class="fas fa-check-circle"></i> Technical Focus</h4>
+                        <p>Specialized drills focusing on ball mastery and tactical intelligence.</p>
+                    </div>
+                    <div class="point-item">
+                        <h4><i class="fas fa-check-circle"></i> Character Building</h4>
+                        <p>Instilling core values: discipline, respect, and hard work.</p>
+                    </div>
+                    <div class="point-item">
+                        <h4><i class="fas fa-check-circle"></i> Clear Pathway</h4>
+                        <p>Guidance for transition to competitive youth leagues and international scouts.</p>
+                    </div>
+                    <div class="point-item">
+                        <h4><i class="fas fa-check-circle"></i> Professional Environment</h4>
+                        <p>Structured training sessions led by experienced mentors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="key-facts">
+        <div class="container">
+            <h2>Quick <span>Facts</span></h2>
+            <div class="fact-grid">
+                <div class="fact-box">
+                    <i class="fas fa-user-shield"></i>
+                    <h4>Eligibility</h4>
+                    <p>Open to dedicated players **7 Years and Up**.</p>
+                </div>
+
+                <div class="fact-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4>Training Days</h4>
+                    <p>**Every Saturday Morning**</p>
+                </div>
+
+                <div class="fact-box">
+                    <i class="fas fa-clock"></i>
+                    <h4>Time Slot</h4>
+                    <p>**10:00 AM** (Prompt Start)</p>
+                </div>
+
+                <div class="fact-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Training Location</h4>
+                    <p>**New State High School, Mushin Palm Avenue, Lagos**</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="staff">
+        <div class="container">
+            <h2>Meet Our <span>Coaching</span> Team</h2>
+
+            <div class="staff-list">
+                <div class="staff-member">
+                    <img src="https://via.placeholder.com/100x100/CCCCCC/666666?text=Coach" alt="Head Coach Botiajo"
+                        class="staff-img">
+                    <p class="role">Head Coach & Technical Director</p>
+                    <p class="name">Botiajo</p>
+                    <p>Specialist in tactical structure and player development.</p>
+                </div>
+
+                <div class="staff-member">
+                    <img src="https://via.placeholder.com/100x100/CCCCCC/666666?text=Captain" alt="Captain Samuel"
+                        class="staff-img">
+                    <p class="role">Team Captain</p>
+                    <p class="name">Samuel</p>
+                    <p>Leads by example, focusing on motivation and team spirit.</p>
+                </div>
+
+                <div class="staff-member">
+                    <img src="https://via.placeholder.com/100x100/CCCCCC/666666?text=Asst.%20Captain"
+                        alt="Assistant Captain Nifemi" class="staff-img">
+                    <p class="role">Assistant Captain</p>
+                    <p class="name">Nifemi</p>
+                    <p>A driving force in training and match-day performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-primary">
+        <div class="container">
+            <h2>Secure Your <span>Spot</span> Now!</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Call us: <a href="tel:+2348086143436"
+                    style="color: var(--color-secondary); font-weight: 700; text-decoration: none;">08086143436</a></p>
+            <p style="font-size: 1.2rem; margin-bottom: 40px;">Use the button below or chat with us instantly on
+                WhatsApp.</p>
+
+            <button class="hero-cta-button" onclick="openRegistrationModal()" style="margin-right: 20px;">
+                Register for Tryouts <i class="fas fa-arrow-right"></i>
+            </button>
+            <a href="https://wa.me/2348086143436" target="_blank" class="hero-cta-button"
+                style="background-color: #25D366; color: white;">
+                <i class="fab fa-whatsapp"></i> WhatsApp Me
+            </a>
+        </div>
+    </section>
+
+
+    <footer id="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Goals Football Academy. All rights reserved.</p>
+            <p>Location: New State High School, Mushin Palm Avenue, Lagos, Nigeria. | Contact: 08086143436</p>
+        </div>
+    </footer>
+
+
+    <div id="registration-modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeRegistrationModal()">&times;</span>
+            <h2>Player Inquiry Form</h2>
+            <p style="text-align: center;">Fill out this form and we will contact you immediately to discuss
+                registration.</p>
+
+            <form target="_blank" action="https://formsubmit.co/YOUR-EMAIL-ADDRESS-HERE" method="POST">
+
+                <div class="form-group">
+                    <label for="p_name">Player's Full Name</label>
+                    <input type="text" id="p_name" name="Player Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="p_age">Player's Age (7 Years and Up)</label>
+                    <input type="number" id="p_age" name="Player Age" min="7" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="g_name">Parent/Guardian Name</label>
+                    <input type="text" id="g_name" name="Guardian Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="g_phone">Contact Phone Number</label>
+                    <input type="tel" id="g_phone" name="Contact Phone" placeholder="+234..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="g_email">Contact Email</label>
+                    <input type="email" id="g_email" name="Contact Email" required>
+                </div>
+
+                <input type="hidden" name="_next" value="YOUR-WEBSITE-URL/index.html?success=true">
+                <input type="hidden" name="_subject" value="NEW ACADEMY REGISTRATION - Goals Academy V2">
+
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        function openRegistrationModal() {
+            document.getElementById('registration-modal').style.display = 'block';
+        }
+
+        function closeRegistrationModal() {
+            document.getElementById('registration-modal').style.display = 'none';
+        }
+
+        // Close the modal if the user clicks anywhere outside of it
+        window.onclick = function (event) {
+            const modal = document.getElementById('registration-modal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
